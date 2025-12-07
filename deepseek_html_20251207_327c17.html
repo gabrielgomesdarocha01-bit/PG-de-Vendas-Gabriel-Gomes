@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Gomes | Tráfego Pago & Social Media para E-commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #081323;
+            line-height: 1.6;
+            background-color: #E9EBED;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cores principais */
+        :root {
+            --primary: #081323;
+            --secondary: #4A95FC;
+            --accent: #4A95FC;
+            --light: #E9EBED;
+            --dark: #081323;
+            --neutral: #506681;
+            --warning: #FFC107;
+        }
+        
+        /* Botões */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 16px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .secondary-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-btn:hover {
+            background-color: #3a7bd5;
+            transform: translateY(-2px);
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .tag-comunidade {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(8, 19, 35, 0.9), rgba(8, 19, 35, 0.9)), url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        /* Seções gerais */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--neutral);
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Problemas/Dores */
+        .problems {
+            background-color: white;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problem-card i {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        /* Solução/Sobre Mim */
+        .solution {
+            background-color: var(--light);
+        }
+        
+        .solution-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .solution-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .solution-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .solution-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .solution-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .solution-features li i {
+            color: var(--secondary);
+        }
+        
+        .solution-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .solution-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Aviso Parceria */
+        .warning-box {
+            background-color: var(--warning);
+            color: var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 50px 0;
+            border-left: 5px solid #e6a800;
+        }
+        
+        .warning-box h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        /* Prova Social */
+        .social-proof {
+            background-color: white;
+        }
+        
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .number-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--light);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .number-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        /* Equipamentos */
+        .equipments {
+            background-color: var(--light);
+        }
+        
+        .equipment-toggle {
+            background-color: white;
+            border: 2px solid var(--secondary);
+            color: var(--primary);
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .equipment-toggle:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .equipment-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .equipment-toggle.active i {
+            transform: rotate(180deg);
+        }
+        
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, margin-top 0.5s ease;
+        }
+        
+        .equipment-list.expanded {
+            max-height: 1000px;
+            margin-top: 30px;
+        }
+        
+        .equipment-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .equipment-item i {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        /* Seção Educativa */
+        .educational {
+            background-color: white;
+        }
+        
+        .edu-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .edu-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .edu-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .edu-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .edu-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .edu-card li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .edu-card li i {
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+        
+        /* Planos */
+        .plans {
+            background-color: var(--light);
+        }
+        
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .plan-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan-card.featured {
+            border: 3px solid var(--secondary);
+            transform: scale(1.05);
+        }
+        
+        .plan-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .plan-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .plan-price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .plan-price span {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        .plan-body {
+            padding: 25px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plan-features li i {
+            color: var(--secondary);
+        }
+        
+        .plan-toggle {
+            background-color: var(--light);
+            color: var(--primary);
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .plan-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background-color: #f9fafc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .plan-details.expanded {
+            max-height: 2000px;
+            padding: 20px;
+        }
+        
+        /* Design 3D */
+        .design-3d {
+            background-color: white;
+            text-align: center;
+        }
+        
+        .design-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Formulário */
+        .contact-form {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .service-tag {
+            background-color: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .solution-content {
+                flex-direction: column;
+            }
+            
+            .plan-card.featured {
+                transform: none;
+            }
+            
+            .plan-card.featured:hover {
+                transform: translateY(-10px);
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Gabriel <span>Gomes</span></a>
+            <div>
+                <span class="tag-comunidade">Membro da Comunidade Subdio - 55mil+ gestores</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Seu Negócio <span>Invisível</span> Vai Se Transformar em uma Máquina de Vendas</h1>
+            <p>Domine Tráfego Pago e Social Media para multiplicar seu faturamento no e-commerce</p>
+            
+            <div class="hero-info">
+                <div class="hero-name">Gabriel Gomes</div>
+                <div class="tag-comunidade">Membro da Comunidade Subdio - 55mil+ gestores</div>
+            </div>
+            
+            <!-- BOTÃO 1 DE WHATSAPP -->
+            <a href="https://wa.me/5511998572805?text=Olá%20Gabriel,%20quero%20vender%20mais%20agora!" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> QUERO VENDER MAIS AGORA
+            </a>
+            
+            <div style="margin-top: 30px;">
+                <a href="https://www.instagram.com/biel_g_rocha/" target="_blank" style="color: white; text-decoration: none;">
+                    <i class="fab fa-instagram"></i> @biel_g_rocha
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Problemas/Dores -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">Você Enfrenta Algum Destes Problemas?</h2>
+            <p class="section-subtitle">Identificamos as principais dores de empreendedores que querem escalar seus e-commerces</p>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Tráfego Zero ou Muito Caro</h3>
+                    <p>Seu site não recebe visitas qualificadas ou você gasta fortunas em anúncios sem retorno.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Redes Sociais Paradas</h3>
+                    <p>Seu Instagram não engaja, não vende e você não sabe por onde começar.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Vendas Instáveis</h3>
+                    <p>Um dia vende bem, no outro não vende nada. Sem previsibilidade no faturamento.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-film"></i>
+                    <h3>Conteúdo Amador</h3>
+                    <p>Vídeos e fotos de baixa qualidade que não convertem em vendas.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Falta de Tempo</h3>
+                    <p>Você não tem horas no dia para cuidar de tráfego, redes sociais e ainda gerir o negócio.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Concorrência Apertando</h3>
+                    <p>Seus concorrentes estão dominando o digital e tomando sua fatia de mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Solução/Sobre Mim -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">Minha Solução Para Seu E-commerce</h2>
+            <p class="section-subtitle">+3 anos transformando negócios invisíveis em máquinas de vendas</p>
+            
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h3>Gabriel Gomes</h3>
+                    <p>Especialista em Tráfego Pago e Social Media com foco em e-commerce. Ajudo empreendedores a transformarem seus negócios através de estratégias comprovadas.</p>
+                    
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> +3 anos de experiência em marketing digital</li>
+                        <li><i class="fas fa-check-circle"></i> Proprietário de 2 e-commerces próprios</li>
+                        <li><i class="fas fa-check-circle"></i> Membro da Comunidade Subdio (+55mil gestores)</li>
+                        <li><i class="fas fa-check-circle"></i> 100% equipamento profissional</li>
+                        <li><i class="fas fa-check-circle"></i> Foco em resultados reais e escaláveis</li>
+                    </ul>
+                    
+                    <!-- BOTÃO 2 DE WHATSAPP -->
+                    <a href="https://wa.me/5511998572805?text=Olá%20Gabriel,%20quero%20falar%20com%20você%20agora!" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> FALE COMIGO AGORA
+                    </a>
+                </div>
+                
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gabriel Gomes - Especialista em Tráfego Pago">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Aviso Importante - Parceria -->
+    <section>
+        <div class="container">
+            <div class="warning-box">
+                <h3><i class="fas fa-exclamation-triangle"></i> IMPORTANTE: Resultados Dependem de Parceria</h3>
+                <p>Os resultados incríveis que meus clientes alcançam dependem de uma <strong>parceria verdadeira</strong>. Você precisa seguir a estratégia, fazer sua parte no atendimento e follow-up, e estar comprometido com o processo. Trabalhamos juntos - eu trago o tráfego e a estratégia, você executa no seu negócio. Juntos alcançaremos resultados incríveis, mas preciso do seu comprometimento!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Prova Social (Números) -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Resultados Comprovados</h2>
+            <p class="section-subtitle">Números que mostram minha experiência e capacidade de entrega</p>
+            
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="number">+3</div>
+                    <div class="label">Anos de Experiência</div>
+                </div>
+                
+                <div class="number-card">
+                    <div class="number">2</div>
+                    <div class="label">E-commerces Próprios</div>
+                </div>
+                
+                <div class="number-card">
+                    <div class="number">55K+</div>
+                    <div class="label">Gestores na Subdio</div>
+                </div>
+                
+                <div class="number-card">
+                    <div class="number">100%</div>
+                    <div class="label">Equipamento Profissional</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Equipamentos - Seção Recolhível -->
+    <section class="equipments">
+        <div class="container">
+            <h2 class="section-title">Estrutura Profissional Completa</h2>
+            <p class="section-subtitle">Trabalho com os melhores equipamentos para entregar conteúdo de alta qualidade</p>
+            
+            <button class="equipment-toggle" id="equipmentToggle">
+                <span>Ver Meus Equipamentos</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            
+            <div class="equipment-list" id="equipmentList">
+                <div class="equipment-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Samsung S23 Ultra</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-desktop"></i>
+                    <h4>PC High-End</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-camera"></i>
+                    <h4>Sony Alpha 6400</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>2 Bastões de Luz PRO</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-microphone"></i>
+                    <h4>Microfone Fifine</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>Hollyland Lapela</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Notebook Profissional</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Adobe Cloud Completo</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-video"></i>
+                    <h4>CapCut Pro</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>IAs Premium</h4>
+                </div>
+                
+                <div class="equipment-item">
+                    <i class="fas fa-cube"></i>
+                    <h4>Blender 3D</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Educativa -->
+    <section class="educational">
+        <div class="container">
+            <h2 class="section-title">Entenda Como Funciona</h2>
+            <p class="section-subtitle">A estratégia completa para transformar seu e-commerce</p>
+            
+            <div class="edu-cards">
+                <div class="edu-card">
+                    <h3>O que é Tráfego Pago?</h3>
+                    <p>Anúncios estratégicos no Meta Ads (Facebook e Instagram) para aparecer para seu cliente ideal.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Segmentação avançada</li>
+                        <li><i class="fas fa-check"></i> Anúncios que convertem</li>
+                        <li><i class="fas fa-check"></i> Vendas previsíveis</li>
+                        <li><i class="fas fa-check"></i> Leads qualificados</li>
+                    </ul>
+                </div>
+                
+                <div class="edu-card">
+                    <h3>O que é Social Media?</h3>
+                    <p>Gestão estratégica de redes sociais com conteúdo profissional e consistente.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Conteúdo que engaja</li>
+                        <li><i class="fas fa-check"></i> Construção de autoridade</li>
+                        <li><i class="fas fa-check"></i> Relacionamento com clientes</li>
+                        <li><i class="fas fa-check"></i> Vendas orgânicas</li>
+                    </ul>
+                </div>
+                
+                <div class="edu-card">
+                    <h3>Por Que os DOIS Juntos?</h3>
+                    <p>A sinergia perfeita: tráfego pago traz leads + social media constrói autoridade.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Sistema completo de vendas</li>
+                        <li><i class="fas fa-check"></i> Credibilidade + Alcance</li>
+                        <li><i class="fas fa-check"></i> Resultados acelerados</li>
+                        <li><i class="fas fa-check"></i> Vendas diárias garantidas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Planos -->
+    <section class="plans">
+        <div class="container">
+            <h2 class="section-title">Escolha Seu Plano Ideal</h2>
+            <p class="section-subtitle">Planos completos com contrato mínimo de 3 meses</p>
+            
+            <div class="plans-container">
+                <!-- Plano 1: Gravação e Edição -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>GRAVAÇÃO E EDIÇÃO</h3>
+                        <div class="plan-price">R$ 1.157,90<span>/mês</span></div>
+                    </div>
+                    <div class="plan-body">
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gravação quinzenal (10 vídeos/fotos)</li>
+                            <li><i class="fas fa-check"></i> Edição profissional</li>
+                            <li><i class="fas fa-check"></i> Drive organizado</li>
+                            <li><i class="fas fa-check"></i> Cliente cuida do Social Media</li>
+                            <li><i class="fas fa-check"></i> Contrato 3 meses</li>
+                        </ul>
+                        
+                        <button class="plan-toggle" data-plan="1">
+                            Ver detalhes completos do plano
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="plan-details" id="planDetails1">
+                            <p><strong>Gravação e Conteúdo:</strong></p>
+                            <ul>
+                                <li>• Gravação a cada 15 dias</li>
+                                <li>• 10 vídeos ou fotos por gravação</li>
+                                <li>• Prazo de edição: 3 a 5 dias após captação</li>
+                            </ul>
+                            
+                            <p><strong>Armazenamento:</strong></p>
+                            <ul>
+                                <li>• Drive para download em alta qualidade</li>
+                                <li>• Cliente deve passar email para armazenamento permanente</li>
+                                <li>• Custos de armazenamento por conta do cliente</li>
+                                <li>• Agência apaga vídeos após 1-2 meses</li>
+                            </ul>
+                            
+                            <p><strong>Organização:</strong></p>
+                            <ul>
+                                <li>• Gravações agendadas com 1 semana de antecedência</li>
+                                <li>• Eventos (Natal, Páscoa, Black Friday): avisar 3 semanas antes</li>
+                                <li>• Identidade visual: cliente deve fornecer (logo, cores, fontes)</li>
+                            </ul>
+                            
+                            <p><strong>Suporte:</strong></p>
+                            <ul>
+                                <li>• Grupo WhatsApp para suporte</li>
+                                <li>• Horário de suporte: 9h às 17h</li>
+                            </ul>
+                            
+                            <p><strong>NÃO inclui:</strong></p>
+                            <ul>
+                                <li>• Eventos grandes, casamentos, coberturas especiais (valores sob consulta)</li>
+                                <li>• Trello (outros sistemas de organização por conta do cliente)</li>
+                            </ul>
+                            
+                            <p><strong>Serviço EXTRA de Identidade Visual:</strong></p>
+                            <ul>
+                                <li>• Se cliente não tem identidade visual completa</li>
+                                <li>• Criação de logo, cores, fontes, documentação</li>
+                                <li>• Valor: R$ 800 a R$ 2.000 (dependendo do serviço)</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#contact" class="secondary-btn" style="width: 100%; text-align: center; margin-top: 15px;">QUERO ESTE PLANO</a>
+                    </div>
+                </div>
+                
+                <!-- Plano 2: Social Media Completo -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">PREFERIDO DOS CLIENTES</div>
+                    <div class="plan-header">
+                        <h3>SOCIAL MEDIA COMPLETO</h3>
+                        <div class="plan-price">R$ 1.378,90<span>/mês</span></div>
+                    </div>
+                    <div class="plan-body">
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gravação quinzenal (10 vídeos/fotos)</li>
+                            <li><i class="fas fa-check"></i> 5 posts por semana no feed</li>
+                            <li><i class="fas fa-check"></i> Edição profissional</li>
+                            <li><i class="fas fa-check"></i> Programação de posts</li>
+                            <li><i class="fas fa-check"></i> Suporte para Stories</li>
+                            <li><i class="fas fa-check"></i> Reuniões quinzenais</li>
+                            <li><i class="fas fa-check"></i> Contrato 3 meses</li>
+                        </ul>
+                        
+                        <button class="plan-toggle" data-plan="2">
+                            Ver detalhes completos do plano
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="plan-details" id="planDetails2">
+                            <p><strong>Gravação e Conteúdo:</strong></p>
+                            <ul>
+                                <li>• Gravação a cada 15 dias</li>
+                                <li>• 10 vídeos ou fotos para 5 posts semanais no feed</li>
+                                <li>• Prazo de edição: 3 a 5 dias após captação</li>
+                                <li>• Cliente deve aprovar conteúdo no grupo antes de publicar</li>
+                            </ul>
+                            
+                            <p><strong>Publicações:</strong></p>
+                            <ul>
+                                <li>• Criamos e programamos posts de FEED</li>
+                                <li>• Se cliente passar acesso, programamos</li>
+                                <li>• Se não, cliente publica nos horários que preferir</li>
+                            </ul>
+                            
+                            <p><strong>Stories:</strong></p>
+                            <ul>
+                                <li>• Stories ficam por responsabilidade do CLIENTE</li>
+                                <li>• Devem ser naturais, do dia a dia</li>
+                                <li>• Ajudamos com ideias e estratégias</li>
+                                <li>• Fornecemos até 3 imagens/vídeos por semana para Stories</li>
+                                <li>• Cliente deve postar 3-7 stories por dia</li>
+                            </ul>
+                            
+                            <p><strong>Armazenamento:</strong></p>
+                            <ul>
+                                <li>• Drive para download em alta qualidade</li>
+                                <li>• Cliente deve passar email para armazenamento permanente</li>
+                                <li>• Custos de armazenamento por conta do cliente</li>
+                                <li>• Agência apaga vídeos após 1-2 meses</li>
+                            </ul>
+                            
+                            <p><strong>Reuniões e Suporte:</strong></p>
+                            <ul>
+                                <li>• Reuniões quinzenais de alinhamento</li>
+                                <li>• Reuniões extras: agendar com antecedência</li>
+                                <li>• Grupo WhatsApp para suporte diário</li>
+                                <li>• Horário de suporte: 9h às 17h</li>
+                            </ul>
+                            
+                            <p><strong>Identidade Visual:</strong></p>
+                            <ul>
+                                <li>• Cliente deve fornecer logo, cores, fontes no Drive</li>
+                                <li>• Se não tiver: serviço de criação R$ 800 a R$ 2.000</li>
+                            </ul>
+                            
+                            <p><strong>NÃO inclui:</strong></p>
+                            <ul>
+                                <li>• Eventos grandes, casamentos, coberturas especiais (sob consulta)</li>
+                                <li>• Trello NÃO incluído (cliente custeia se quiser)</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#contact" class="secondary-btn" style="width: 100%; text-align: center; margin-top: 15px; background-color: #25D366; color: white;">QUERO ESTE PLANO</a>
+                    </div>
+                </div>
+                
+                <!-- Plano 3: Tráfego Pago -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">PREFERIDO DOS CLIENTES</div>
+                    <div class="plan-header">
+                        <h3>TRÁFEGO PAGO</h3>
+                        <div class="plan-price">R$ 1.478,90<span>/mês</span></div>
+                    </div>
+                    <div class="plan-body">
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gestão completa Meta Ads</li>
+                            <li><i class="fas fa-check"></i> Reuniões quinzenais de alinhamento</li>
+                            <li><i class="fas fa-check"></i> Grupo WhatsApp para suporte diário</li>
+                            <li><i class="fas fa-check"></i> Drive organizado com acessos</li>
+                            <li><i class="fas fa-check"></i> Análise e otimização semanal</li>
+                            <li><i class="fas fa-check"></i> Relatórios de performance</li>
+                            <li><i class="fas fa-check"></i> Suporte dedicado</li>
+                            <li><i class="fas fa-check"></i> Contrato 3 meses</li>
+                        </ul>
+                        
+                        <button class="plan-toggle" data-plan="3">
+                            Ver detalhes completos do plano
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="plan-details" id="planDetails3">
+                            <p><strong>Plataforma:</strong></p>
+                            <ul>
+                                <li>• Meta Ads (Facebook e Instagram)</li>
+                            </ul>
+                            
+                            <p><strong>Gestão:</strong></p>
+                            <ul>
+                                <li>• Gestão completa das campanhas</li>
+                                <li>• Análise e otimização semanal</li>
+                                <li>• Estratégias personalizadas para cada negócio</li>
+                            </ul>
+                            
+                            <p><strong>Reuniões:</strong></p>
+                            <ul>
+                                <li>• Reuniões quinzenais obrigatórias para alinhamento</li>
+                                <li>• Reuniões extras: agendar com antecedência</li>
+                            </ul>
+                            
+                            <p><strong>Comunicação:</strong></p>
+                            <ul>
+                                <li>• Grupo WhatsApp com você + responsáveis da empresa</li>
+                                <li>• Compartilhamento diário de informações</li>
+                                <li>• Horário de suporte: 9h às 17h</li>
+                            </ul>
+                            
+                            <p><strong>IMPORTANTE - Atendimento:</strong></p>
+                            <ul>
+                                <li>• Precisamos acompanhar o atendimento da empresa</li>
+                                <li>• 50% do resultado depende de atendimento bem feito</li>
+                                <li>• TRÁFEGO PAGO NÃO É MÁGICA</li>
+                            </ul>
+                            
+                            <p><strong>IMPORTANTE - Criativos:</strong></p>
+                            <ul>
+                                <li>• Criativo (vídeo/foto) = 70% do resultado da campanha</li>
+                                <li>• Se cliente NÃO contratar gravação: vídeos devem seguir estratégia</li>
+                                <li>• Qualidade do criativo impacta diretamente nos resultados</li>
+                            </ul>
+                            
+                            <p><strong>Organização:</strong></p>
+                            <ul>
+                                <li>• Drive com todos os acessos</li>
+                                <li>• CRM: cliente custeia (suporte para CRM complexo: +R$150/mês)</li>
+                                <li>• Trello NÃO incluído (cliente custeia)</li>
+                            </ul>
+                            
+                            <p><strong>Campanhas Novas:</strong></p>
+                            <ul>
+                                <li>• Avisar equipe com 1 semana de antecedência</li>
+                                <li>• Configuração: 1 a 3 dias úteis após vídeos prontos</li>
+                                <li>• NÃO subimos campanhas em fim de semana</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#contact" class="secondary-btn" style="width: 100%; text-align: center; margin-top: 15px; background-color: #25D366; color: white;">QUERO ESTE PLANO</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Planos 4 e 5 -->
+            <div class="plans-container" style="margin-top: 40px;">
+                <!-- Plano 4: Tráfego + Gravação -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>TRÁFEGO + GRAVAÇÃO</h3>
+                        <div class="plan-price">R$ 1.879,00<span>/mês</span></div>
+                    </div>
+                    <div class="plan-body">
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> TUDO do plano Tráfego Pago</li>
+                            <li><i class="fas fa-check"></i> Gravação de vídeos para anúncios</li>
+                            <li><i class="fas fa-check"></i> Vamos até sua empresa quando necessário</li>
+                            <li><i class="fas fa-check"></i> Edição premium dos criativos</li>
+                            <li><i class="fas fa-check"></i> Equipamentos profissionais</li>
+                            <li><i class="fas fa-check"></i> Contrato 3 meses</li>
+                        </ul>
+                        
+                        <button class="plan-toggle" data-plan="4">
+                            Ver detalhes completos do plano
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="plan-details" id="planDetails4">
+                            <p><strong>Inclui TUDO do Plano Tráfego Pago, MAIS:</strong></p>
+                            <ul>
+                                <li>• Gravação sob demanda para criativos de anúncios</li>
+                                <li>• Visita presencial quando necessário</li>
+                                <li>• Edição profissional dos vídeos</li>
+                                <li>• Equipamentos cinematográficos</li>
+                                <li>• Gravações agendadas com 1 semana de antecedência</li>
+                                <li>• Prazo de edição: 1 a 3 dias após captação</li>
+                                <li>• Aprovação no grupo antes de subir campanha</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#contact" class="secondary-btn" style="width: 100%; text-align: center; margin-top: 15px;">QUERO ESTE PLANO</a>
+                    </div>
+                </div>
+                
+                <!-- Plano 5: Completo (Tráfego + Social Media) -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>COMPLETO</h3>
+                        <div class="plan-price">R$ 2.178,90<span>/mês</span></div>
+                    </div>
+                    <div class="plan-body">
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gestão COMPLETA Meta Ads</li>
+                            <li><i class="fas fa-check"></i> Social Media profissional (5 posts/semana)</li>
+                            <li><i class="fas fa-check"></i> Gravação quinzenal</li>
+                            <li><i class="fas fa-check"></i> Criação de conteúdo estratégico</li>
+                            <li><i class="fas fa-check"></i> Edição e publicação de tudo</li>
+                            <li><i class="fas fa-check"></i> Estratégia integrada</li>
+                            <li><i class="fas fa-check"></i> Suporte VIP dedicado</li>
+                            <li><i class="fas fa-check"></i> Contrato 3 meses</li>
+                        </ul>
+                        
+                        <button class="plan-toggle" data-plan="5">
+                            Ver detalhes completos do plano
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="plan-details" id="planDetails5">
+                            <p><strong>Inclui TUDO dos Planos:</strong></p>
+                            <ul>
+                                <li>• TODOS os detalhes do Plano Tráfego Pago</li>
+                                <li>• TODOS os detalhes do Plano Social Media</li>
+                            </ul>
+                            
+                            <p><strong>PLUS:</strong></p>
+                            <ul>
+                                <li>• Estratégia integrada: tráfego pago + orgânico trabalhando juntos</li>
+                                <li>• Sistema completo de vendas online</li>
+                                <li>• Suporte VIP prioritário</li>
+                                <li>• Reuniões semanais de alinhamento</li>
+                                <li>• Relatórios completos de performance</li>
+                                <li>• Estratégia de conteúdo integrada</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#contact" class="secondary-btn" style="width: 100%; text-align: center; margin-top: 15px;">QUERO ESTE PLANO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Design 3D -->
+    <section class="design-3d">
+        <div class="container">
+            <h2 class="section-title">Serviço Extra Exclusivo</h2>
+            
+            <div class="design-card">
+                <i class="fas fa-cube" style="font-size: 48px; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 32px; margin-bottom: 15px;">Design 3D com Blender</h3>
+                <p style="font-size: 18px; margin-bottom: 25px; opacity: 0.9;">Artes tridimensionais exclusivas para elevar sua marca a outro patamar</p>
+                <a href="https://wa.me/5511998572805?text=Olá%20Gabriel,%20quero%20consultar%20sobre%20Design%203D!" target="_blank" class="whatsapp-btn">
+                    <i class="fas fa-cube"></i> CONSULTAR SOBRE DESIGN 3D
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Formulário de Contato -->
+    <section class="contact-form" id="contact">
+        <div class="container">
+            <h2 class="section-title">Pronto Para Transformar Seu Negócio?</h2>
+            <p class="section-subtitle">Preencha o formulário e vamos agendar uma conversa</p>
+            
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Nome da Empresa</label>
+                        <input type="text" id="company" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plan">Plano de Interesse *</label>
+                        <select id="plan" class="form-control" required>
+                            <option value="">Selecione um plano</option>
+                            <option value="gravação">Plano 1: Gravação e Edição - R$ 1.157,90/mês</option>
+                            <option value="social">Plano 2: Social Media Completo - R$ 1.378,90/mês</option>
+                            <option value="tráfego">Plano 3: Tráfego Pago - R$ 1.478,90/mês</option>
+                            <option value="tráfego+gravação">Plano 4: Tráfego + Gravação - R$ 1.879,00/mês</option>
+                            <option value="completo">Plano 5: Completo - R$ 2.178,90/mês</option>
+                            <option value="design3d">Design 3D - Valores sob consulta</option>
+                            <option value="personalizado">Plano Personalizado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem (conte sobre seu negócio)</label>
+                        <textarea id="message" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <!-- BOTÃO 3 DE WHATSAPP (integrado ao formulário) -->
+                    <button type="button" id="submitForm" class="whatsapp-btn" style="width: 100%; font-size: 20px;">
+                        <i class="fab fa-whatsapp"></i> ENVIAR SOLICITAÇÃO
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Gabriel Gomes</h3>
+                    <p>Especialista em Tráfego Pago e Social Media para e-commerce. Transformando negócios invisíveis em máquinas de vendas.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <div class="footer-services">
+                        <span class="service-tag">Tráfego Pago</span>
+                        <span class="service-tag">Social Media</span>
+                        <span class="service-tag">E-commerce</span>
+                        <span class="service-tag">Design 3D</span>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: (11) 99857-2805</p>
+                    <p><i class="fab fa-instagram"></i> Instagram: @biel_g_rocha</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/biel_g_rocha/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5511998572805" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 Gabriel Gomes - Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Toggle para equipamentos
+        document.getElementById('equipmentToggle').addEventListener('click', function() {
+            const equipmentList = document.getElementById('equipmentList');
+            this.classList.toggle('active');
+            equipmentList.classList.toggle('expanded');
+        });
+        
+        // Toggle para detalhes dos planos
+        document.querySelectorAll('.plan-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const planId = this.getAttribute('data-plan');
+                const planDetails = document.getElementById('planDetails' + planId);
+                const icon = this.querySelector('i');
+                
+                planDetails.classList.toggle('expanded');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+        
+        // Formulário integrado ao WhatsApp
+        document.getElementById('submitForm').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const company = document.getElementById('company').value;
+            const plan = document.getElementById('plan').value;
+            const message = document.getElementById('message').value;
+            
+            // Validação básica
+            if (!name || !email || !whatsapp || !plan) {
+                alert('Por favor, preencha todos os campos obrigatórios (*)');
+                return;
+            }
+            
+            // Criar mensagem para WhatsApp
+            let whatsappMessage = `Olá Gabriel! Gostaria de solicitar um orçamento:\n\n`;
+            whatsappMessage += `*Nome:* ${name}\n`;
+            whatsappMessage += `*E-mail:* ${email}\n`;
+            whatsappMessage += `*WhatsApp:* ${whatsapp}\n`;
+            if (company) whatsappMessage += `*Empresa:* ${company}\n`;
+            whatsappMessage += `*Plano de Interesse:* ${plan}\n`;
+            if (message) whatsappMessage += `*Mensagem:* ${message}\n`;
+            
+            // Codificar a mensagem para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Abrir WhatsApp
+            window.open(`https://wa.me/5511998572805?text=${encodedMessage}`, '_blank');
+            
+            // Limpar formulário (opcional)
+            document.getElementById('contactForm').reset();
+        });
+        
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
